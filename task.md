@@ -1,0 +1,5 @@
+- [x] Desenhar a solução no [Figma](https://www.figma.com/design/f8790N51hmJF6ExZl1uokf/News-dev?node-id=0-1&p=f&t=6t1AFIxoECuCGKjT-0)
+- [x] Criar as tasks dessa atividade, baseado no Figma e no que é pedido da atividade
+- [ ] Desenvolver o Front de acordo com o [Figma](https://www.figma.com/design/f8790N51hmJF6ExZl1uokf/News-dev?node-id=0-1&p=f&t=6t1AFIxoECuCGKjT-0)
+    - [ ] Desenvolver os componentes
+- [ ] Planejar a parte logica do site usando o [GPT](https://chatgpt.com/c/68d6cb5b-d268-832a-b11a-b29c0defc632)
