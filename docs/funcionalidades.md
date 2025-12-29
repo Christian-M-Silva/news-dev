@@ -3,7 +3,7 @@
 ### Paginação
 - Tela principal para ver todas as news (/)
 - Visualizar uma news (/noticia/[id])
-- Tela de gerenciamento (/manager)
+- Tela de gerenciamento (/manager?token=123)
 
 ### Visualização de noticias
 - Loading para as noticias
