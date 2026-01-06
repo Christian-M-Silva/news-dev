@@ -1,6 +1,6 @@
 export default function NewsDetail() {
 	return (
-		<main >
+		<main className="m-7" >
 			<article className="w-full max-w-4xl text-gray-200">
 				{/* Título */}
 				<header className="text-center mb-8">
