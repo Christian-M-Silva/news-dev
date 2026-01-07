@@ -1,10 +1,13 @@
 import CardNews from "@/components/specific/CardNews/CardNews";
-import Image from "next/image";
+import { NewsResponse } from "@/types";
 
-export default function Home() {
-  return (
-    <div className="m-3">
-      <CardNews title="Titulo" description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has..."/>
-    </div>
-  );
+export default async function Home() {
+	const data = await fetch(`https://gnews.io/api/v4/search?q=ti&lang=pt&apikey=${process.env.API_KEY}`)
+	const news: NewsResponse = await data.json()
+
+	return (
+		<div className="m-3">
+			{news.articles.map(notice => <CardNews key={notice.id} title={notice.title} description={notice.description} />)}
+		</div>
+	);
 }
