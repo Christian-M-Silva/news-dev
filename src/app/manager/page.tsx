@@ -5,6 +5,5 @@ export default function Manager() {
 				Tela Administrativa
 			</span>
 		</div>
-
 	)
 }
