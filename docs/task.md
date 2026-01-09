@@ -1,1 +1,0 @@
-- [ ] O título e a descrição da página devem ser configurados dinamicamente para SEO Metadata.

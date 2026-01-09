@@ -1,9 +1,9 @@
 import CardNews from "@/components/specific/CardNews/CardNews";
+import GetNews from "@/app/helpers/request";
 import { NewsResponse } from "@/types";
 
 export default async function Home() {
-	const data = await fetch(`https://gnews.io/api/v4/top-headlines?category=technology&lang=pt&apikey=${process.env.API_KEY}`, {next: {revalidate: 60}})
-	const news: NewsResponse = await data.json()
+	const news: NewsResponse = await GetNews()
 
 	return (
 		<div className="m-3">

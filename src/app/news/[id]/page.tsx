@@ -1,15 +1,25 @@
-import { NewsResponse } from "@/types";
+import { SelectNews } from "@/app/helpers/selectNews";
+import type { Metadata } from 'next'
 
-export default async function NewsDetail({ params }: {
+type paramUrl = {
 	params: Promise<{ id: string }>
 }
-) {
-	const data = await fetch(`https://gnews.io/api/v4/top-headlines?category=technology&lang=pt&apikey=${process.env.API_KEY}`, { next: { revalidate: 60 } })
-	const news: NewsResponse = await data.json()
+
+export async function generateMetadata(
+	{ params }: paramUrl
+): Promise<Metadata> {
 	const { id } = await params
+	const newsSelected = await SelectNews(id)
 
+	return {
+		title: newsSelected?.title,
+	}
+}
 
-	const newsSelected = news.articles.find(notice => notice.id === id)
+export default async function NewsDetail({ params }: paramUrl
+) {
+	const { id } = await params
+	const newsSelected = await SelectNews(id)
 
 	return (
 		<main className="m-7" >
