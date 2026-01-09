@@ -1,6 +1,7 @@
 export interface CardNewsProps {
     title: string,
-    description:string
+    description:string,
+	id: string
 }
 
 export interface NewsResponse {

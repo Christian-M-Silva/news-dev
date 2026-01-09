@@ -7,7 +7,7 @@ export default async function Home() {
 
 	return (
 		<div className="m-3">
-			{news.articles.map(notice => <CardNews key={notice.id} title={notice.title} description={notice.description} />)}
+			{news.articles.map(notice => <CardNews key={notice.id} id={notice.id} title={notice.title} description={notice.description} />)}
 		</div>
 	);
 }

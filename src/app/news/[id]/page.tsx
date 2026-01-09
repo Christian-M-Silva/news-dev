@@ -1,4 +1,16 @@
-export default function NewsDetail() {
+import { NewsResponse } from "@/types";
+
+export default async function NewsDetail({ params }: {
+	params: Promise<{ id: string }>
+}
+) {
+	const data = await fetch(`https://gnews.io/api/v4/top-headlines?category=technology&lang=pt&apikey=${process.env.API_KEY}`, { next: { revalidate: 60 } })
+	const news: NewsResponse = await data.json()
+	const { id } = await params
+
+
+	const newsSelected = news.articles.find(notice => notice.id === id)
+
 	return (
 		<main className="m-7" >
 			<article className="w-full max-w-4xl text-gray-200">
@@ -20,22 +32,18 @@ export default function NewsDetail() {
 							after:border-white/40
 						"
 					>
-						Título da Notícia
+						{newsSelected?.title}
 					</h1>
 
 					<p className="mt-2 text-lg">
-						13/03/2025 – Christian
+						{newsSelected?.publishedAt} – Christian
 					</p>
 				</header>
 
 				{/* Corpo da notícia */}
 				<section>
 					<p>
-						Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-						Lorem Ipsum has been the industry's standard dummy text ever since the
-						1500s, when an unknown printer took a galley of type and scrambled it to
-						make a type specimen book. It has survived not only five centuries, but
-						also the leap into electronic typesetting, remaining essentially unchanged.
+						{newsSelected?.content}
 					</p>
 				</section>
 			</article>
