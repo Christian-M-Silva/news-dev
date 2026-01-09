@@ -1,3 +1,2 @@
-- [ ] Manter por 60 segundos um cache da informação trazida da API e usar esses valores.
 - [ ] Fazer com que ao clicar no card da noticia seja aberta em details com a noticia correspondente ao id selecionado
 - [ ] O título e a descrição da página devem ser configurados dinamicamente para SEO Metadata.
